@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>implementando Chart.JS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <canvas id="myChart1"></canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart2"></canvas>
+    </div>
+
+</body>
+
+</html>
+<script>
+    // Const: é a forma de declarar variável, assim como o var. É uma constante, e assim que ela é declarada, nada pode mudar.
+
+    const myChart = document.getElementById('myChart1');
+
+    // Labels: vetor. Onde eu tenho um pacote e em cada parte eu tenho uma informação (eixo x).
+
+    new Chart(myChart1, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Temperatura',
+                data: [30, 29, 28, 25, 22, 23],
+                borderWidth: 3,
+                backgroundColor: 'rgb(237, 48, 207)',
+                borderColor: 'rgb(237, 48, 207)',
+            },
+            {
+                label: 'Umidade',
+                data: [80, 82, 80, 85, 80, 83],
+                borderWidth: 3,
+                backgroundColor: 'rgb(0, 0, 255)',
+                borderColor: 'rgb(0, 0, 255)',
+            }
+            ]
+        },
+    });
+
+    // Data: jason. São dados. 
+    // Datasets: são métricas, são as linhas ou barras do gráfico.
+
+    const myChart2 = document.getElementById('myChart2');
+
+    new Chart(myChart2, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',],
+            datasets: [{
+                label: 'Temperatura-Média',
+                data: [22, 24, 27, 23, 20, 18],
+                borderWidth: 1,
+                borderWidth: 1,
+                backgroundColor: 'rgb(237, 48, 207)',
+                borderColor: 'rgb(237, 48, 207)',
+            },
+            {
+                label: 'Umidade-Média',
+                data: [90, 89, 93, 87, 88, 82],
+                borderWidth: 1,
+                backgroundColor: 'rgb(0, 0, 255)',
+                borderColor: 'rgb(0, 0, 255)',
+            }
+            ]
+        },
+    });
+</script>
